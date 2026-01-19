@@ -31,8 +31,6 @@ blog/
 ├── frontend/               # ⚛️ React Frontend
 │   ├── src/                # Components, Pages, Hooks
 │   └── package.json        # Node dependencies
-├── app/                    # (Legacy) Standalone Backend code
-├── ui/                     # (Legacy) Gradio Interface
 └── README.md               # This documentation
 ```
 
@@ -83,12 +81,14 @@ The frontend will run at `http://localhost:5173` and communicate with the backen
 -   `POST /api/generate`: Generate blog from URL
 -   `GET /api/history`: Get user's generation history
 
-## 🧪 Legacy/Alternative Usage (Gradio)
 
-If you prefer a simple Python-only interface, you can still use the Gradio app:
+## 🧪 Optional: Gradio UI (Legacy)
+
+If you want a simple Python-only interface for quick testing, you can use the legacy Gradio app (if present):
 
 ```bash
-# From the root directory
+# From the backend directory
+cd backend
 python ui/gradio_app.py
 ```
 
