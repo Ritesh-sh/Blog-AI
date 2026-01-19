@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: blog-api
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=${APP_ENV:-development}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_DB=${MONGODB_DB:-blog_generator}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
+      - CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:7860
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # React Frontend (Vite)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: blog-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+      - VITE_APP_ENV=${APP_ENV:-development}
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Gradio UI (optional, for legacy/quick testing)
+  gradio:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: blog-gradio
+    ports:
+      - "7860:7860"
+    environment:
+      - APP_ENV=${APP_ENV:-development}
+      - API_URL=http://backend:8000
+      - PORT=7860
+      - GRADIO_SERVER_NAME=0.0.0.0
+    command: ["python", "-m", "ui.gradio_app"]
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    profiles:
+      - gradio  # Only starts with: docker-compose --profile gradio up
+
+networks:
+  default:
+    name: blog-network

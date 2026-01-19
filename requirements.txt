@@ -1,0 +1,47 @@
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Web Scraping
+beautifulsoup4==4.12.3
+newspaper3k==0.2.8
+requests==2.31.0
+lxml==5.1.0
+
+# NLP & ML
+keybert==0.8.4
+sentence-transformers==2.3.1
+transformers==4.37.2
+torch
+
+# Text Processing
+nltk==3.8.1
+spacy==3.7.2
+
+# Vector Store (Optional)
+faiss-cpu
+
+# LLM API
+google-generativeai==0.3.2
+
+# Frontend
+gradio==4.41.1
+
+# Utilities
+python-dotenv==1.0.0
+httpx==0.26.0
+tenacity==8.2.3
+
+# MongoDB Atlas (async driver)
+motor==3.3.2
+pymongo[srv]==4.6.1
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Development
+pytest==7.4.4
+black==24.1.1
