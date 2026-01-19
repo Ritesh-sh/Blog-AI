@@ -49,6 +49,17 @@ frontend/
 │   │   ├── Register.jsx
 │   │   ├── Dashboard.jsx
 │   │   ├── Generate.jsx
+│   │   ├── History.jsx
+│   │   ├── HistoryDetail.jsx
+│   ├── lib/            # API and auth helpers
+│   │   ├── api.js
+│   │   └── auth.js
+│   └── index.css       # Global styles
+├── package.json        # Node dependencies
+├── vite.config.js      # Vite config
+├── tailwind.config.js  # Tailwind config
+└── README.md           # Frontend documentation
+│   │   ├── Generate.jsx
 │   │   └── History.jsx
 │   ├── lib/            # Utilities
 │   │   ├── api.js      # Axios API client

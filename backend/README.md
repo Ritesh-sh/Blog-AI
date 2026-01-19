@@ -33,8 +33,6 @@ backend/
 │       ├── prompt_builder.py
 │       ├── seo_postprocessor.py
 │       └── image_fetcher.py
-├── ui/
-│   └── gradio_app.py     # Gradio UI (optional)
 ├── tests/
 ├── requirements.txt
 ├── Dockerfile

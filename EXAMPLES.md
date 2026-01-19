@@ -1,6 +1,7 @@
+
 # Example API Requests and Responses
 
-This document contains example requests and responses for the AI Blog Generator API.
+This document contains example requests and responses for the AI Blog Generator API (React frontend + FastAPI backend).
 
 ---
 

@@ -2,51 +2,27 @@
 
 ## 🚀 Getting Started in 5 Minutes
 
-### Step 1: Setup Environment
+### 1️⃣ Backend Setup
 
 ```powershell
-# Navigate to project directory
-cd "c:\Users\Sharma ji\OneDrive\Desktop\placement\blog"
-
-# Create virtual environment
+cd backend
 python -m venv venv
-
-# Activate virtual environment
-.\venv\Scripts\activate
-
-# Install dependencies
+.\venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
+cp .env.example .env
+# Edit .env and add your GEMINI_API_KEY and MONGODB_URL
 ```
 
-### Step 2: Configure API Keys
+### 2️⃣ Frontend Setup
 
 ```powershell
-# Copy environment template
-copy .env.example .env
-
-# Edit .env file (use notepad or your favorite editor)
-notepad .env
+cd frontend
+npm install
+npm run dev
 ```
 
-Add your API key to `.env`:
-
-**For OpenAI:**
-```env
-LLM_PROVIDER=openai
-OPENAI_API_KEY=sk-your-actual-key-here
-OPENAI_MODEL=gpt-3.5-turbo
-```
-
-**For Google Gemini (more cost-effective):**
-```env
-LLM_PROVIDER=gemini
-GEMINI_API_KEY=your-gemini-key-here
-GEMINI_MODEL=gemini-1.5-flash
-```
-
-### Step 3: Start the Application
-
-**Option A: Full Stack (API + UI)**
+The frontend will run at `http://localhost:5173` and communicate with the backend at `http://localhost:8000`.
 
 Terminal 1 (Backend):
 ```powershell

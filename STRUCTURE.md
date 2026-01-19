@@ -319,8 +319,9 @@ Config Files:      150 lines  ( 4%)
 4. app/core/url_validator.py
    ↓
 5. app/core/content_extractor.py
-   ↓
-6. app/core/text_cleaner.py
+   │   └── frontend/                               # React Frontend
+   │       ├── src/                                # Components, Pages, Hooks
+   │       └── package.json                        # Node dependencies
    ↓
 7. app/core/keyword_extractor.py
    ↓
