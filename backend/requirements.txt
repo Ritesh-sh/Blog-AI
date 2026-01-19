@@ -4,6 +4,7 @@ uvicorn[standard]
 pydantic
 pydantic-settings
 pydantic[email]
+gunicorn
 # Web Scraping
 beautifulsoup4
 newspaper3k
