@@ -1,38 +1,29 @@
 # Web Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
 
 # Web Scraping
-beautifulsoup4==4.12.3
-newspaper3k==0.2.8
-requests==2.31.0
-lxml==5.1.0
+beautifulsoup4
+newspaper3k
+requests
+lxml
 
 # NLP & ML
-keybert==0.8.4
-sentence-transformers==2.3.1
-transformers==4.37.2
+keybert
+sentence-transformers
+transformers
 torch
-
-# Text Processing
-nltk==3.8.1
-spacy==3.7.2
-
-# Vector Store (Optional)
-faiss-cpu
+nltk
 
 # LLM API
-google-generativeai==0.3.2
-
-# Frontend
-
+google-generativeai
 
 # Utilities
-python-dotenv==1.0.0
-httpx==0.26.0
-tenacity==8.2.3
+python-dotenv
+httpx
+tenacity
 
 # MongoDB Atlas (async driver)
 motor
@@ -43,5 +34,5 @@ python-jose[cryptography]
 passlib[bcrypt]
 
 # Development
-pytest==7.4.4
-black==24.1.1
+pytest
+black
