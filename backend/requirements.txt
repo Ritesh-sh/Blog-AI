@@ -3,7 +3,7 @@ fastapi
 uvicorn[standard]
 pydantic
 pydantic-settings
-
+pydantic[email]
 # Web Scraping
 beautifulsoup4
 newspaper3k
